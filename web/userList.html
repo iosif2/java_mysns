@@ -1,0 +1,47 @@
+<html>
+<head>
+  <meta name=viewport content="width=device-width, initial-scale=1, user-scalable=0">
+  <meta charset="utf-8" />	<!-- html 한글 처리 위해 필요 -->
+  <link rel="stylesheet" href="css/core.css">
+  <title>MySNS</title>
+</head>
+<body>
+<div class="page-hdr">MySNS</div>
+<div class="page-body">
+  <table id="list" class="section mtop-20 pad-16"></table>
+</div>
+</body>
+</html>
+
+<script src="js/jquery-3.6.1.min.js"></script>
+<script src="js/core.js"></script>
+<script>
+  $(document).ready(function() {
+    Page.init(start);
+  });
+
+  function start(uid) {
+    AJAX.call("jsp/userList.jsp", null, function(data) {
+      var users = JSON.parse(data.trim());	// parse를 이용하면 실제 JavaScript에서 처리할 수 있는 JavaScript의 객체(배열)이 되는 것
+      console.log(users);
+      show(users);
+    });
+  }
+
+  // userList.jsp에서 하던 html 동적 생성 부분을 클라이언트 측으로 이관시켜 서버의 부하 감소
+  // JSON을 사용하면 FeedObj나 UserObj 필요 X
+  // JSON이 심플한 포맷이기 때문에 데이터를 인코딩, 디코딩, 전송하는 것이 거의 부하가 들지 않음
+  function show(users) {
+    var str = "";	// JavaScript에서의 처리를 위해 String 대신 var 사용
+    str += "<tr><th colspan=3>가입자 리스트</th></tr>";
+    for (var i=0; i<users.length; i++) {
+      str += "<tr><td colspan=3><hr></td></tr>";
+      str += "<tr>";
+      str += "<td>" + users[i].id + "</td>";
+      str += "<td>" + users[i].name + "</td>";
+      str += "<td>&nbsp;<small>(" + users[i].ts + ")</small></td>";
+      str += "</tr>";
+    }
+    $("#list").html(str);
+  }
+</script>
