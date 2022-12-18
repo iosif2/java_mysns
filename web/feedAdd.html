@@ -1,7 +1,7 @@
 <html>
 <head>
     <meta name=viewport content="width=device-width, initial-scale=1, user-scalable=0">
-    <meta charset="utf-8"> <!-- html 한글 처리 위해 필요 -->
+    <meta charset="utf-8">
     <link rel="stylesheet" href="css/core.css">
     <title>MySNS</title>
     <style>
@@ -34,14 +34,14 @@
     </style>
 </head>
 <body>
-<div class="page-hdr">MySNS</div>
+<div class="page-hdr" onclick="document.location.href = 'main.html'">MySNS</div>
 <div class="page-body">
     <div class="section pad-24 mtop-30">
         <!-- input id="id" type="text" placeholder="아이디 (이메일주소)" -->
         <textarea id="content" class="mtop-10" placeholder="이곳에 글을 작성해 주세요."> </textarea>
         <div class="section pad-4 mtop-30">
             <div class="desc">아래에서 이미지를 선택해주세요.</div>
-            <input type="file" id="image">	<!-- image가 id가 아닌 class로 선언되면 여러 개 선택 가능 -> imgobj 선언 시 배열 사용 -->
+            <input type="file" id="image">
         </div>
         <input type="submit" class="mtop-30" value="업로드하기" onclick="upload()">
     </div>
@@ -53,8 +53,8 @@
 <script src="js/jquery-3.6.1.min.js"></script>
 <script src="js/core.js"></script>
 <script>
-    $(document).ready(function() {	// jQuery에서 공통으로 정의하는 함수
-        Page.init(setup);	// 로그인이 정상적으로 완료되었을 경우 setup 함수를 init 함수에 넣어 Page.init 호출
+    $(document).ready(function() {
+        Page.init(setup);
         /*
         AJAX.call("jsp/session.jsp", null, function(data) {
             var uid = data.trim();
@@ -65,9 +65,6 @@
         });
         */
     });
-
-    // 만약 로그인이 안되었다면 Page.init()에 의해 진입 불가 -> 바로 login.html로 넘어감
-    // 로그인이 되어 있으면 무조건 loginId가 uid로 넘어옴 -> loginId 값은 null이 될 수 없음
     var loginId = null;
     function setup(uid) {
         loginId = uid;
@@ -91,13 +88,13 @@
             return;
         }
 
-        var imgobj = $("#image")[0].files[0];	// 파일 자체는 url에 들어갈 수 없기 때문에 url과 params를 구분
-        var jsonobj = {id: id, content: content, ts: getTime()};	// DB에 그대로 저장될 내용
+        var imgobj = $("#image")[0].files[0];
+        var jsonobj = {id: id, content: content, ts: getTime()};
         if (imgobj != null) {
-            jsonobj.images = [imgobj.name];	// 이미지 파일의 이름만 배열 형태로 넣는다
+            jsonobj.images = [imgobj.name];
         }
 
-        var params = new FormData(); // multipart/form-data를 전송하기 위해 웹 표준에서 제공하는 객체
+        var params = new FormData();
         // params.append("id", id);
         // params.append("content", content);
         params.append("jsonstr", JSON.stringify(jsonobj));

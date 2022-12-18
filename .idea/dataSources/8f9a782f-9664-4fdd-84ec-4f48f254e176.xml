@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dataSource name="mysns@localhost">
-  <database-model serializer="dbm" dbms="MYSQL" family-id="MYSQL" format-version="4.40">
+  <database-model serializer="dbm" dbms="MYSQL" family-id="MYSQL" format-version="4.45">
     <root id="1">
       <DefaultCasing>mixed/mixed</DefaultCasing>
       <DefaultEngine>InnoDB</DefaultEngine>
@@ -1040,16 +1040,16 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
     <column id="300" parent="297" name="no">
-      <DataType>int unsigned|0s</DataType>
+      <DasType>int unsigned|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
     <column id="301" parent="297" name="id">
-      <DataType>varchar(128)|0s</DataType>
+      <DasType>varchar(128)|0s</DasType>
       <Position>2</Position>
     </column>
     <column id="302" parent="297" name="jsonstr">
-      <DataType>varchar(8192)|0s</DataType>
+      <DasType>varchar(8192)|0s</DasType>
       <Position>3</Position>
     </column>
     <index id="303" parent="297" name="PRIMARY">
@@ -1063,11 +1063,11 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
     <column id="305" parent="298" name="id">
-      <DataType>varchar(128)|0s</DataType>
+      <DasType>varchar(128)|0s</DasType>
       <Position>1</Position>
     </column>
     <column id="306" parent="298" name="frid">
-      <DataType>varchar(128)|0s</DataType>
+      <DasType>varchar(128)|0s</DasType>
       <Position>2</Position>
     </column>
     <index id="307" parent="298" name="idx1">
@@ -1075,12 +1075,12 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <Type>btree</Type>
     </index>
     <column id="308" parent="299" name="id">
-      <DataType>varchar(128)|0s</DataType>
+      <DasType>varchar(128)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
     <column id="309" parent="299" name="jsonstr">
-      <DataType>varchar(1024)|0s</DataType>
+      <DasType>varchar(1024)|0s</DasType>
       <Position>2</Position>
     </column>
     <index id="310" parent="299" name="PRIMARY">

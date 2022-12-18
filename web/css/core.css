@@ -33,6 +33,7 @@ body {
 	font-weight: bold;
 	background-color: #FF4023;
 	color: white;
+	cursor: pointer;
 }
 
 .page-footer {

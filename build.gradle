@@ -1,0 +1,27 @@
+plugins {
+    id 'java'
+}
+
+version '1.0'
+
+repositories {
+    mavenCentral()
+}
+sourceSets {
+    main {
+        java {
+            srcDirs = ['src']
+        }
+    }
+}
+dependencies {
+    // https://mvnrepository.com/artifact/commons-fileupload/commons-fileupload
+    implementation 'commons-fileupload:commons-fileupload:1.4'
+    // https://mvnrepository.com/artifact/commons-io/commons-io
+    implementation 'commons-io:commons-io:2.11.0'
+    // https://mvnrepository.com/artifact/com.googlecode.json-simple/json-simple
+    implementation 'com.googlecode.json-simple:json-simple:1.1.1'
+    // https://mvnrepository.com/artifact/mysql/mysql-connector-java
+    implementation 'mysql:mysql-connector-java:8.0.31'
+}
+

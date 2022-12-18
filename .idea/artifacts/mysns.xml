@@ -1,0 +1,22 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" build-on-make="true" name="mysns">
+    <output-path>$PROJECT_DIR$/out/artifacts/mysns</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="java_mysns.main" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Gradle: commons-io:commons-io:2.11.0" />
+          <element id="library" level="project" name="Gradle: com.google.protobuf:protobuf-java:3.19.4" />
+          <element id="library" level="project" name="Gradle: com.googlecode.json-simple:json-simple:1.1.1" />
+          <element id="library" level="project" name="Gradle: com.mysql:mysql-connector-j:8.0.31" />
+          <element id="library" level="project" name="Gradle: commons-fileupload:commons-fileupload:1.4" />
+          <element id="library" level="project" name="Gradle: junit:junit:4.10" />
+          <element id="library" level="project" name="Gradle: org.hamcrest:hamcrest-core:1.1" />
+        </element>
+      </element>
+      <element id="dir-copy" path="$PROJECT_DIR$/web" />
+    </root>
+  </artifact>
+</component>
